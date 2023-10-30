@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ExpenseItem from './components/ExpenseItem';
+import NoName from './NoName';
 
 function App() {
+  const $h1 = <h1>메롱메롱</h1>;
+
+  const $h2 = React.createElement('h2', null, '반가워요~~');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <ExpenseItem />
+      <ExpenseItem />
+      <ExpenseItem />
+      <NoName />
+      <div className='App'>
+        {$h1}
+        {$h2}
+      </div>
+      <div className='noname'>
+        <input type='text' />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          오늘은 월요일 입니다. <br />
+          그래서 공부가 하기 싫어요~
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
+    </>
   );
 }
 
