@@ -31,18 +31,18 @@ const Expenses = ({ items }) => {
   //   );
   // }
   //
-  //   return items.map((item) => (
-  //     // 자바스크립트 배열의 메서드 map(배열 요소에 적용할 함수)
-  //     // 콜백 함수의 매개값으로 배열의 요소가 하나씩 전달됨
-  //     // 콜백 함수는 배열 요소의 개수만큼 반복됨
-  //     // map의 리턴값: 함수가 적용된 각 요소가 담긴 새로운 배열이 리턴됨
-  //     <ExpenseItem
-  //       key={item.id}
-  //       title={item.title}
-  //       price={item.price}
-  //       date={item.date}
-  //     />
-  //   ));
+  // return items.map((item) => (
+  //   // 자바스크립트 배열의 메서드 map(배열 요소에 적용할 함수)
+  //   // 콜백 함수의 매개값으로 배열의 요소가 하나씩 전달됨
+  //   // 콜백 함수는 배열 요소의 개수만큼 반복됨
+  //   // map의 리턴값: 함수가 적용된 각 요소가 담긴 새로운 배열이 리턴됨
+  //   <ExpenseItem
+  //     key={item.id}
+  //     title={item.title}
+  //     price={item.price}
+  //     date={item.date}
+  //   />
+  // ));
   // };
 
   const filteredItems = items.filter(
