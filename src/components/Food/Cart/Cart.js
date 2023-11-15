@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import CartModal from '../../UI/Modal/CartModal';
 import styles from './Cart.module.scss';
 import CartContext from '../../../store/cart-context';
+import CartItem from './CartItem';
 
 /* const DUMMY_CART = [
   {
@@ -19,7 +20,7 @@ import CartContext from '../../../store/cart-context';
 ]; */
 
 const Cart = ({ onHideCart }) => {
-  const cartContext = useContext(CartContext);
+  const { items, totalPrice } = useContext(CartContext);
 
   const {
     'cart-items': cartItemStyle,
@@ -33,14 +34,17 @@ const Cart = ({ onHideCart }) => {
     <CartModal onHide={onHideCart}>
       {/* 주문 내역 */}
       <ul className={cartItemStyle}>
-        {cartContext.items.map((cartItem) => (
-          <li key={cartItem.id}>{cartItem.name}</li>
+        {items.map((cartItem) => (
+          <CartItem
+            key={cartItem.id}
+            cart={cartItem}
+          />
         ))}
       </ul>
 
       <div className={total}>
         <span>주문 총액</span>
-        <span>50,000원</span>
+        <span>{new Intl.NumberFormat('ko-kr').format(totalPrice)}원</span>
       </div>
       <div className={actions}>
         <button
